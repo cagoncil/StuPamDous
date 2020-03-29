@@ -1,0 +1,20 @@
+{
+  "name": "stupamdous",
+  "version": "1.0.0",
+  "description": "This is a quirky cat pun-filled project dedicated to my dear friend and her two cats, Stu and Pam.",
+  "main": "app.js",
+  "scripts": {
+    "build": "browserify app.js -o bundle.js",
+    "watch": "watchify app.js -o bundle.js"
+  },
+  "author": "Crystal Skye Agoncillo",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "watchify": "^3.11.1"
+  },
+  "dependencies": {
+    "asdfjkl": "0.0.6",
+    "uniq": "^1.0.1"
+  }
+}

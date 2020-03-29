@@ -1,0 +1,319 @@
+/* =================== Main Styles =================== */
+
+body {
+	background: plum;
+	font-family: 'Manjari', sans-serif;
+	overflow: hidden;
+	-webkit-transition: background-image 0.2s ease;
+	-moz-transition: background-image 0.5s ease;
+	-o-transition: background-image 0.2s ease;
+	transition: background-image 0.2s ease;
+	-o-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+body.pam {
+	background-image: url(media/pam.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 40%;
+	background-size: cover;
+}
+
+body.stu {
+	background-image: url(media/stu.gif);
+	background-repeat: no-repeat;
+	background-position: 50% 49%;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+	padding-top: 100px;
+	margin: 0;
+	font-size: 10vw;
+}
+
+h2 {
+	text-align: center;
+	color: #fff;
+	font-size: 2em;
+	margin-top: -1vh;
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	position: absolute;
+	bottom: 20vh;
+	left: 12.5vw;
+	right: 12.5vw;
+}
+
+#message {
+	color: white;
+	font-size: 1.25em;
+	font-family: 'Manjari', sans-serif;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 15vh;
+	left: 12.5vw;
+	right: 12.5vw;
+}
+
+#ifIE10or11 {
+	height: 45px;
+	align-self: center;
+	text-align: center;
+	color: white;
+	font-size: 1.5em;
+	display: none;
+}
+
+.show {
+	visibility: visible;
+	opacity: 1;
+	-webkit-transition: opacity 1s ease-in;
+	-moz-transition: opacity 1s ease-in;
+	-o-transition: opacity 1s ease-in;
+	transition: opacity 1s ease-in;
+}
+
+.hide {
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: visibility 0s 0.7s, opacity 0.7s ease-out;
+	-moz-transition: visibility 0s 0.7s, opacity 0.7s ease-out;
+	-o-transition: visibility 0s 0.7s, opacity 0.7s ease-out;
+	transition: visibility 0s 0.7s, opacity 0.7s ease-out;
+}
+
+input {
+	height: 45px;
+	width: 42.5vw;
+	font-size: 22px;
+	font-family: 'Manjari', sans-serif;
+	color: thistle;
+	border: 1px solid thistle;
+	padding: 0 10px;
+	margin: 0 0.15vw;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+input:focus {
+	outline: none;
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: thistle;
+}
+
+::selection {
+  color: white;
+  background: thistle;
+}
+
+::spelling-error {
+  color: plum;
+}
+
+/* ===================== Buttons ===================== */
+
+button {
+	height: 45px;
+	padding: 12.5px 15px;
+	margin: 0 0.15vw;
+	font-size: 22.5px;
+	font-weight: bold;
+	color: #fff;
+	background-color: thistle;
+	border: none;
+	font-family: 'Manjari', sans-serif;
+	vertical-align: middle;
+	-webkit-transition: 0.5s ease-in;
+	-moz-transition: 0.5s ease-in;
+	-o-transition: 0.5s ease-in;
+	transition: 0.5s ease-in;
+}
+
+button:focus {
+	outline: none;
+	background-color: white;
+	color: orchid;
+	position: relative;
+	overflow: hidden;
+}
+
+button::after {
+	display: none;
+	content: "";
+	position: absolute;
+	border-radius: 10%;
+	background-color: rgba(212, 144, 210, 0.3);
+
+	width: 50px;
+	height: 30px;
+	margin-top: -15px;
+	margin-left: -24px;
+
+	/* Center the ripple */
+	top: 50%;
+	left: 50%;
+
+	animation: ripple 1s;
+	opacity: 0;
+}
+
+button:focus:not(:active)::after {
+	display: block;
+}
+
+@keyframes ripple {
+	from {
+		opacity: 1;
+		transform: scale(0);
+	} to {
+		opacity: 0;
+		transform: scale(10);
+	}
+}
+
+/* ================= Loading Screen ================== */
+.lds-ring {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: auto;
+}
+.lds-ring div {
+	z-index: 9999;
+	top: calc(50vh - 51px);
+	box-sizing: border-box;
+	display: block;
+	position: absolute;
+	width: 51px;
+	height: 51px;
+	margin: 6px;
+	border: 6px solid #fff;
+	border-radius: 50%;
+	animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+	border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================== Media Queries ================== */
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		#ifIE10or11 {
+			display: block;
+		}
+}
+
+@media screen and (max-width: 800px){
+	.form {
+		bottom: 30vh;
+	}
+
+	#message {
+		bottom: 20vh;
+	}
+}
+
+@media screen and (max-width: 600px) {
+
+	body.pam {
+		background: url(media/pam-mobile.gif) no-repeat 40% 50% fixed;
+		background-color: plum;
+		font-family: 'Manjari', sans-serif;
+	}
+
+	body.stu {
+		background: url(media/stu-mobile.gif) no-repeat 60% 65% fixed;
+		background-size: 200%;
+		background-color: plum;
+	}
+
+	html, body {
+		height: 100%; /* using 100% instead of 100vh for mobile */
+		overflow: hidden;
+	}
+
+	body {
+		position: relative;
+	}
+
+	.form {
+		display: block;
+		position: absolute;
+		top: calc(100% - 159px);
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	input {
+		width: 100%;
+		display: block;
+		margin: 0;
+	}
+
+	button {
+		width: 100%;
+		display: block;
+		margin: 5px 0 0;
+	}
+
+	#message {
+		height: 45px;
+		font-size: calc(1.25em + 6 * ((100vw - 320px) / 680));
+		align-self: center;
+		text-align: center;
+		position: absolute;
+		top: calc(100% - 215px);
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	h1 {
+		font-size: calc(3.25em + 6 * ((100vw - 320px) / 680));
+		margin: 0;
+		padding-top: 4vh;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: calc(1.28em + 6 * ((100vw - 320px) / 680));
+	}
+
+}
+
+@media screen and (max-width: 320px){
+	h1 {
+		font-size: calc(2.75em + 6 * ((100vw - 320px) / 680));
+	}
+}
