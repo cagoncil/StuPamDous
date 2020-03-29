@@ -179,8 +179,10 @@ const catArray = [
 
 document.onreadystatechange = () => {
 	const state = document.readyState
-	if (state == "complete") {
-    	setTimeout(() => {
+  	if (state === 'interactive') {
+		return false
+  	} else if (state === 'complete') {
+  		setTimeout(() => {
         	document.getElementsByClassName("lds-ring")[0].style.display="none"
         	document.getElementById("content").classList.remove("hide")
     	}, 1000)
@@ -17634,5 +17636,3 @@ function unique(list, compare, sorted) {
 module.exports = unique
 
 },{}]},{},[1]);
-
-
