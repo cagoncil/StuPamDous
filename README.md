@@ -1,7 +1,5 @@
 # StuPamDous
 
-=======
-
 <img src="https://i.ibb.co/sqc2L5F/7.png" alt="Stu, one of the two cats who comprise StuPamDous" style="max-width: 100%;" height="150">
 
 ### 🐈 About this project 🐈
