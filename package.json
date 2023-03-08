@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "browserify": "^16.5.0",
-    "watchify": "^3.11.1"
+    "watchify": "^4.0.0"
   },
   "dependencies": {
     "asdfjkl": "0.0.6",
